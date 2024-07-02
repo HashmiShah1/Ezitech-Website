@@ -49,3 +49,13 @@ document.querySelector('.mobi').addEventListener('mousemove', function(event) {
 document.querySelector('.mobi').addEventListener('mouseleave', function() {
     mobiImage.style.transform = 'translate(0, 0)';
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navUl.classList.toggle('active');
+    });
+});
