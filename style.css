@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,8 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.top{
+/* Main styling */
+.top {
     background-color: #0065ca;
     color: white;
     padding: 10px;
@@ -17,22 +18,93 @@ body {
     align-items: center;
 }
 
-.contact-info{
+.contact-info {
     font-size: 12px;
     display: flex;
     margin-left: 50px;
 }
 
-.social-media{
+.social-media {
     font-size: 12px;
 }
 
-.contact-info p, .social-media a {
+.contact-info p,
+.social-media a {
     margin: 0 5px;
     color: white;
 }
 
-.thumb{
+.auth {
+    font-size: 13px;
+}
+
+.auth a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* Styling for screens up to 768px */
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        font-size: 10px;
+        margin-left: 0;
+        order: 1;
+    }
+
+    .contact-info p {
+        display: none;
+    }
+
+    .contact-info p:first-child {
+        display: flex;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .auth {
+        font-size: 11px;
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .auth a {
+        margin: 0 5px;
+    }
+}
+
+/* Additional styling for screens up to 480px */
+@media (max-width: 480px) {
+
+    .contact-info,
+    .social-media {
+        display: none;
+    }
+
+    .top {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .auth {
+        margin-left: auto;
+    }
+}
+
+
+.thumb {
     background-image: url(imgs/1.jpg);
     background-position: center;
     background-size: cover;
@@ -40,21 +112,22 @@ body {
     height: 90vh;
 }
 
+/* Original styling for screens wider than 768px */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 7, 41, 0.623); /* lightblue color with 50% opacity */
+    background: rgba(0, 7, 41, 0.623);
+    /* lightblue color with 50% opacity */
     padding: 0px 20px;
 }
-
 
 .logo h1 {
     font-size: 47px;
     color: white;
 }
 
-.logo h1 span{
+.logo h1 span {
     font-size: 16px;
     margin-top: 0px;
     display: flex;
@@ -71,27 +144,74 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a, .auth a {
+nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: #0056b3;
 }
 
-.auth {
-    font-size: 13px;
+/* Responsive styling for screens narrower than 768px */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 35px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 95px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 7, 41, 0.9);
+        margin-top: 10px;
+        /* Adjust this value to control how far below the menu appears */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .hamburger.active+ul {
+        display: flex;
+    }
 }
 
-.auth a {
-    margin: 0 10px;
+/* Responsive styling for screens narrower than 500px */
+@media (max-width: 500px) {
+    nav ul {
+        top: 70px;
+    }
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hamburger {
+        font-size: 25px;
+    }
 }
 
+
+/* Hero Section */
 .hero {
     position: relative;
-    background-image: url('hero-background.jpg'); /* Add your background image */
+    background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
     height: 80.5vh;
@@ -107,7 +227,7 @@ nav ul li a:hover{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 102%;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -117,11 +237,11 @@ nav ul li a:hover{
     margin-top: -50px;
 }
 
-.hero-content h1{
+.hero-content h1 {
     font-size: 50px;
 }
 
-.hero-content h1 span p{
+.hero-content h1 span p {
     color: #007bff;
 }
 
@@ -130,12 +250,12 @@ nav ul li a:hover{
     display: inline-block;
 }
 
-.search-bar i{
+.search-bar i {
     cursor: pointer;
     font-size: 14px;
 }
 
-.search-bar i:hover{
+.search-bar i:hover {
     color: black;
 }
 
@@ -158,12 +278,11 @@ nav ul li a:hover{
     font-size: 20px;
 }
 
-
 .products {
     margin-top: 20px;
 }
 
-.product-logos{
+.product-logos {
     display: flex;
     gap: 50px;
     text-align: center;
@@ -173,6 +292,81 @@ nav ul li a:hover{
 .product-logos h1 {
     font-size: 40px;
 }
+
+/* Responsive styling for screens narrower than 768px */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 60px;
+        flex-wrap: nowrap;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 20px 30px;
+        font-size: 14px;
+    }
+
+    .products {
+        margin-top: 15px;
+    }
+
+    .product-logos {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .product-logos h1 {
+        font-size: 25px;
+    }
+
+    .hero .overlay {
+        height: 104%;
+    }
+}
+
+/* Responsive styling for screens narrower than 500px */
+@media (max-width: 500px) {
+    .hero-content {
+        margin-top: -20px;
+    }
+
+    .hero-content h1 {
+        display: none;
+        font-size: 25px;
+    }
+
+    .hero-content h2{
+        display: none;
+    }
+
+    .search-bar input {
+        width: 90%;
+        padding: 15px 20px;
+        font-size: 12px;
+    }
+
+    .products {
+        margin-top: 10px;
+    }
+
+    .product-logos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-logos h1 {
+        font-size: 20px;
+    }
+    .hero .overlay {
+        height: 105.5%;
+    }
+}
+
 
 .container {
     padding: 20px;
@@ -222,7 +416,8 @@ nav ul li a:hover{
 }
 
 .category:hover {
-    transform: translateY(-5px); /* Move category 2px up on hover */
+    transform: translateY(-5px);
+    /* Move category 2px up on hover */
 }
 
 .category i {
@@ -254,19 +449,25 @@ nav ul li a:hover{
 }
 
 .courses-container {
-    overflow: hidden; /* Hide horizontal overflow */
-    padding: 20px; /* Adjust padding as needed */
+    overflow: hidden;
+    /* Hide horizontal overflow */
+    padding: 20px;
+    /* Adjust padding as needed */
 }
 
 .courses {
     display: flex;
-    transition: transform 0.5s ease; /* Smooth slide transition */
-    padding: 40px; /* Adjust padding as needed */
+    transition: transform 0.5s ease;
+    /* Smooth slide transition */
+    padding: 40px;
+    /* Adjust padding as needed */
 }
 
 .course {
-    flex: 0 0 calc(25% - 20px); /* 25% width for each course with 20px gap */
-    margin-right: 20px; /* Space between courses */
+    flex: 0 0 calc(25% - 20px);
+    /* 25% width for each course with 20px gap */
+    margin-right: 20px;
+    /* Space between courses */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -282,7 +483,7 @@ nav ul li a:hover{
     transition: all 0.3s ease;
 }
 
-.course img:hover{
+.course img:hover {
     transform: scale(1.1);
 }
 
@@ -301,7 +502,8 @@ nav ul li a:hover{
     margin: 20px 0;
 }
 
-.course-duration, .course-price {
+.course-duration,
+.course-price {
     font-size: 0.9em;
     margin: 5px 0;
 }
@@ -342,7 +544,8 @@ nav ul li a:hover{
     cursor: pointer;
     margin: 0 5px;
     font-size: 1.2em;
-    outline: none; /* Remove button outline */
+    outline: none;
+    /* Remove button outline */
 }
 
 .pagination button:hover {
@@ -377,7 +580,7 @@ nav ul li a:hover{
     transition: all 0.3s ease;
 }
 
-.internships .card:hover{
+.internships .card:hover {
     transform: scale(1.05);
 }
 
@@ -437,13 +640,13 @@ nav ul li a:hover{
     align-items: center;
 }
 
-.internships .card-body p strong{
+.internships .card-body p strong {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.internships .card-body p strong i{
+.internships .card-body p strong i {
     border-radius: 50%;
     margin-left: 35px;
     width: 40px;
@@ -455,7 +658,7 @@ nav ul li a:hover{
     cursor: pointer;
 }
 
-.internships .card-body p span{
+.internships .card-body p span {
     margin-left: 20px;
 }
 
@@ -475,7 +678,7 @@ nav ul li a:hover{
     background-color: #0056b3;
 }
 
-.load-more{
+.load-more {
     display: block;
     margin: 30px auto 0;
     background-color: #007bff;
@@ -494,23 +697,27 @@ nav ul li a:hover{
 
 /* Mobile Learning Section */
 .mobi {
-    position: relative; /* Ensure the container is positioned */
+    position: relative;
+    /* Ensure the container is positioned */
     display: flex;
     justify-content: space-around;
     padding: 2rem;
     background: #f9f9f9;
     margin-top: 50px;
-    overflow: hidden; /* Hide overflow to prevent scrolling issues */
+    overflow: hidden;
+    /* Hide overflow to prevent scrolling issues */
 }
 
 .mobi img {
     max-width: 400px;
-    position: relative; /* Position image relative to its container */
-    transition: transform 0.3s ease-out; /* Smooth transition for movement */
+    position: relative;
+    /* Position image relative to its container */
+    transition: transform 0.3s ease-out;
+    /* Smooth transition for movement */
 }
 
 
-.mobi div{
+.mobi div {
     width: 600px;
 }
 
@@ -520,17 +727,17 @@ nav ul li a:hover{
     margin-bottom: 1rem;
 }
 
-.mobi .app-buttons{
+.mobi .app-buttons {
     display: flex;
     margin-top: 30px;
     gap: 50px;
 }
 
-.mobi .app-buttons button i{
+.mobi .app-buttons button i {
     font-size: 2rem;
 }
 
-.mobi .app-buttons button{
+.mobi .app-buttons button {
     display: flex;
     outline: none;
     border: none;
@@ -578,12 +785,12 @@ nav ul li a:hover{
     margin-bottom: 2rem;
 }
 
-.footerr .footer-content .about h3{
+.footerr .footer-content .about h3 {
     margin-left: 50px;
 }
 
-.footerr .footer-content .about p{
-    
+.footerr .footer-content .about p {
+
     margin-left: 50px
 }
 
@@ -597,12 +804,12 @@ nav ul li a:hover{
     font-size: 1.5rem;
 }
 
-.footerr .footer-content ul{
+.footerr .footer-content ul {
     font-size: 0.9rem;
     margin-left: 10px;
 }
 
-.footerr .footer-content ul li{
+.footerr .footer-content ul li {
     margin: 5px;
 }
 
@@ -616,6 +823,6 @@ nav ul li a:hover{
     font-size: 0.9rem;
 }
 
-.footerr p a{
+.footerr p a {
     color: white;
 }
