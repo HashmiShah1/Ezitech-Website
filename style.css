@@ -496,8 +496,7 @@ nav ul li a:hover {
 
 @media (max-width: 500px) {
     .how-it-works-images {
-        flex-direction: column;
-        align-items: center;
+        max-width: 80px;
         gap: 20px;
     }
 
